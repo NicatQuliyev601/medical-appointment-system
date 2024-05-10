@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: Medical Appointment Booking System
+  datasource:
+    password: password
+    url: jdbc:postgresql://localhost:5434/medical-system
+    username: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    open-in-view: true
+  security:
+    secret: bXMxNG1zMTRtczE0bXMxNG1zMTRtczE0bXMxNG1zMTRtczE0bXMxNG1zMTRtczE0bXMxNG1zMTRtczE0bXMxNA==
+    token:
+      expirationTime: 60
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: quliyeev.n.18@gmail.com
+    password: fjzlpekfwykzapdz
+    properties:
+      mail:
+        smtp:
+          starttls:
+            enable: true
+          auth: true
