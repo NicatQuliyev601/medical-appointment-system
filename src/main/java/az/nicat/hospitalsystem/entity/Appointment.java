@@ -24,10 +24,16 @@ public class Appointment {
     private AppointmentStatus status;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "patient_id")
     @JsonIgnore
     @ToString.Exclude
-    private User user;
+    private User patient;
+
+    @ManyToOne
+    @JoinColumn(name = "doctor_id")
+    @JsonIgnore
+    @ToString.Exclude
+    private User doctor;
 
     @OneToMany(mappedBy = "appointment", cascade = CascadeType.REMOVE)
     private List<Feedback> feedbacks = new ArrayList<>();

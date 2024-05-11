@@ -42,8 +42,11 @@ public class User {
             inverseJoinColumns = {@JoinColumn(name = "authority_id", referencedColumnName = "id")})
     private List<Authority> authorities;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE)
-    private List<Appointment> appointments = new ArrayList<>();
+    @OneToMany(mappedBy = "patient", cascade = CascadeType.REMOVE)
+    private List<Appointment> appointmentsPatient = new ArrayList<>();
+
+    @OneToMany(mappedBy = "doctor", cascade = CascadeType.REMOVE)
+    private List<Appointment> appointmentsDoctor = new ArrayList<>();
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE)
     private List<Notification> notifications= new ArrayList<>();
